@@ -2,6 +2,12 @@ console.log('JS OK');
 
 // Esercizio
 
+// Take the element from DOM
+
+const priceTicketPlaceholder = document.getElementById('price-ticket');
+console.log(priceTicketPlaceholder);
+
+
 // KM Request to the user
 
 const userKm = parseInt(prompt('Please enter the km of the route', 37));
@@ -40,3 +46,7 @@ if (userAge < 18) {
 }
 
 console.log(finalTicketPrice.toFixed(2));
+
+// Write final price into DOM 
+
+priceTicketPlaceholder.innerText = finalTicketPrice.toFixed(2);
