@@ -11,3 +11,11 @@ console.log(userKM);
 
 const userAge = parseInt(prompt('Please enter your age', 22));
 console.log(userAge);
+
+// Added variable price for km and discount
+
+const kmPrice = 0.21;
+
+const youthDiscount = 20 / 100;
+
+const seniorDiscount = 40 / 100;
