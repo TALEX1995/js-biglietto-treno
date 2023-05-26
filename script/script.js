@@ -50,3 +50,17 @@ console.log(finalTicketPrice.toFixed(2));
 // Write final price into DOM 
 
 priceTicketPlaceholder.innerText = finalTicketPrice.toFixed(2);
+
+
+
+// BONUS
+
+// insert km route in DOM
+
+const kmRoutePlaceholder = document.getElementById('km-route');
+kmRoutePlaceholder.innerText = userKm + 'km';
+
+// insert age user in DOM
+
+const userAgePlaceholder = document.getElementById('user-age');
+userAgePlaceholder.innerText = userAge + ' ' + 'anni';
