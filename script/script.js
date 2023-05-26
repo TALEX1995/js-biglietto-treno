@@ -27,3 +27,16 @@ const seniorDiscount = 40 / 100;
 
 const priceTicket = userKm * kmPrice;
 console.log(priceTicket);
+
+
+// Calculate ticket price and discount
+
+let finalTicketPrice = priceTicket
+
+if (userAge < 18) {
+    finalTicketPrice -= finalTicketPrice * youthDiscount;
+} else if (userAge >= 65) {
+    finalTicketPrice -= finalTicketPrice * seniorDiscount;
+}
+
+console.log(finalTicketPrice.toFixed(2));
