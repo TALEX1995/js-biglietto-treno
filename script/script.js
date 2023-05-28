@@ -7,6 +7,9 @@ console.log('JS OK');
 const priceTicketPlaceholder = document.getElementById('price-ticket');
 console.log(priceTicketPlaceholder);
 
+const userNoticeDiscountPlaceholder = document.getElementById('user-notice-discount');
+console.log(userNoticeDiscountPlaceholder);
+
 
 // KM Request to the user
 
@@ -36,6 +39,7 @@ if (isNaN(userKm) || isNaN(userAge)) {
 } else if (userKm < 1 || userAge < 1) {
     alert ('E necessario inserire un numero maggiore di 1');
 } else {
+    
     // Calculate ticket price
 
     const priceTicket = userKm * kmPrice;
@@ -46,17 +50,28 @@ if (isNaN(userKm) || isNaN(userAge)) {
 
     let finalTicketPrice = priceTicket
 
+    let userNoticeDiscount = 'Considerata la sua età non rientra in alcuna fascia per poter usufruire dello sconto sul biglietto.';
+
     if (userAge < 18) {
         finalTicketPrice -= finalTicketPrice * youthDiscount;
+        userNoticeDiscount = 'Considerata la sua fascia d\'età rientra nello sconto giovani del 20%'
 }   else if (userAge >= 65) {
         finalTicketPrice -= finalTicketPrice * seniorDiscount;
+        userNoticeDiscount = 'Considerata la sua fascia d\'età rientra nello sconto anziani del 40%';
 }
+
+    console.log(userNoticeDiscount);
 
     console.log(finalTicketPrice.toFixed(2));
 
-    // Write final price into DOM 
+    // Write final price and discount into DOM 
 
     priceTicketPlaceholder.innerText = finalTicketPrice.toFixed(2);
+
+    userNoticeDiscountPlaceholder.innerText = userNoticeDiscount;
+
+
+    // Write Discount in the DOM
 
 
 
@@ -71,13 +86,15 @@ if (isNaN(userKm) || isNaN(userAge)) {
 
     const userAgePlaceholder = document.getElementById('user-age');
     userAgePlaceholder.innerText = userAge + ' ' + 'anni';
+
+   
+
+    
+    
 }
 
 
 
-
-
-
-// Provare ad aggiungere una costante scope globale = Considerata la sua età non rientra in alcuna fascia per poter usufruire dello sconto sul biglietto.
+// Provare ad aggiungere una costante = Considerata la sua età non rientra in alcuna fascia per poter usufruire dello sconto sul biglietto.
 // Andare a cambiare la costante sotto ai 18 anni inserendo (considerata la sua fascia d'età rientra nello sconto giovani del 20%)
 // Andare a cambiare la costante sopra i 65 anni inserendo (considerata la sua fascia d'età rientra nello sconto anziani del 40%)
